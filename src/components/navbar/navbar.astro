@@ -23,26 +23,66 @@ export const menuitems = [
 ];
 ---
 
-<nav class="absolute inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border-gray-100 bg-white/80 py-3 backdrop-blur-lg md:top-4 lg:max-w-screen-xl">
-    <div class="px-4">
-        <div class="flex items-center justify-between">
-            <div class="flex shrink-0">
-                <a aria-current="page" class="flex items-center" href="/">
-                    <img class="h-7 w-auto" src="/images/logo-tiktokio.webp" alt="Tiktokio logo">
-                    <p class="sr-only">{t("header.title")}</p>
-                </a>
-            </div>
-            <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
-                <a aria-current="link" class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:text-red-600" href="/blog/how-to-save-tiktok-videos-without-watermark">{t("header.howto")}</a>
-                <a aria-current="link" class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:text-red-600" href="/">{t("header.tvd")}</a>
-                <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:text-red-600" href="/tiktok-story-downloader">{t("header.story")}</a>
-                <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:text-red-600" href="/douyin-downloader">{t("header.douyin")}</a>
-            </div>
-            <div class="flex items-center justify-end gap-3">
-
-<LanguageSelector showFlag={false} class="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"/>
-                
-            </div>
-        </div>
+<div x-data="true" class="flex px-4 mx-auto md:items-center md:justify-between flex-row md:px-6 lg:px-8 z-10 md:pt-2 relative isolate bg-white">
+    <div class="p-4 flex flex-row items-center justify-between">
+        <a href={localizePath('/')} class="flex gap-3 items-center text-2xl font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">STiktokio</a>
     </div>
-</nav>
+    <nav
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-90"
+        class="flex md:mt-0 lg:pl-8 md:items-center flex-grow pb-4 md:pb-0 flex-col gap-2 transition-all ease-out md:transition-none md:justify-end md:flex-row"
+    >
+        <div class="mt-4 md:mt-0 flex justify-end flex-row gap-4 center items-center">
+            <!-- <button class="md:py-2 leading-6">
+                <div class="inline-block p-3 bg-gray-600 rounded-lg shadow-md transition-transform duration-300 hover:bg-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="cursor-pointer">
+                        <g clip-path="url(#clip0_27_354)">
+                            <path d="M10 17.5V19.1667" stroke="#F5F7FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M15.2998 15.3L16.4831 16.4833" stroke="#F5F7FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M3.5166 16.4833L4.69993 15.3" stroke="#F5F7FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M17.5 10H19.1667" stroke="#F5F7FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M0.833496 10H2.50016" stroke="#F5F7FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path
+                                d="M10.0002 14.1667C12.3013 14.1667 14.1668 12.3012 14.1668 10C14.1668 7.69882 12.3013 5.83334 10.0002 5.83334C7.69898 5.83334 5.8335 7.69882 5.8335 10C5.8335 12.3012 7.69898 14.1667 10.0002 14.1667Z"
+                                stroke="#F5F7FA"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M15.2998 4.7L16.4831 3.51666" stroke="#F5F7FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M3.5166 3.51666L4.69993 4.7" stroke="#F5F7FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M10 0.833344V2.50001" stroke="#F5F7FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_27_354">
+                                <rect width="20" height="20" fill="white"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+            </button> -->
+            <button class="md:py-2 leading-6">
+                <div class="inline-block p-3 bg-white rounded-lg shadow-md transition-transform duration-300 hover:bg-gray-200">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"
+                        ><g clip-path="url(#clip0_1_714)"
+                            ><path
+                                d="M10 18.3333C14.6024 18.3333 18.3333 14.6024 18.3333 10C18.3333 5.39763 14.6024 1.66667 10 1.66667C5.39763 1.66667 1.66667 5.39763 1.66667 10C1.66667 14.6024 5.39763 18.3333 10 18.3333Z"
+                                stroke="black"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path><path d="M1.66667 10H18.3333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path
+                                d="M10 1.66667C12.0844 3.94863 13.269 6.91003 13.3333 10C13.269 13.09 12.0844 16.0514 10 18.3333C7.9156 16.0514 6.73104 13.09 6.66667 10C6.73104 6.91003 7.9156 3.94863 10 1.66667V1.66667Z"
+                                stroke="black"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></g
+                        ><defs><clipPath id="clip0_1_714"><rect width="20" height="20"></rect></clipPath></defs></svg
+                    >
+                </div>
+            </button>
+        </div>
+    </nav>
+</div>
