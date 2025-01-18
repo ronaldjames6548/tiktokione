@@ -11,7 +11,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://stiktokio.com",
+	site: "https://astros.zank.studio",
 	vite: {
 		define: {
 			__DATE__: `'${new Date().toISOString()}'`,
